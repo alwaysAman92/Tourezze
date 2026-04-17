@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../config/api';
 import React, { useEffect, useState } from "react";
 import Hero from "../components/explore/Hero";
 import CategoryTabs from "../components/explore/CategoryTabs";
@@ -11,7 +12,7 @@ export default function ExplorePage() {
   // FETCH DESTINATIONS FROM API
   const fetchDestinations = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/destinations");
+      const res = await fetch(`${API_BASE}/api/admin/destinations`);
       const data = await res.json();
       if (data.success) setDestinations(data.data);
     } catch (err) {

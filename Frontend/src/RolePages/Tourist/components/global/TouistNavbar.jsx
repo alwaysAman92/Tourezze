@@ -28,7 +28,6 @@ export default function Navbar({ setAuthType }) {
     { to: "/role/tourist/ai-itinerary", label: "Plan" },
     { to: "/role/tourist/hotels", label: "Hotels" },
     { to: "/role/tourist/packages", label: "Packages" },
-    { to: "/role/tourist/shop", label: "Shop" },
     { to: "/role/tourist/events", label: "Events" },
   ];
 

@@ -43,7 +43,7 @@ export const sidebarSections = [
     title: "Management",
     items: [
       { to: "hotels", label: "Hotels & Homestays", icon: Hotel },
-      { to: "vendors", label: "Vendors & Marketplace", icon: Store },
+      { to: "vendors", label: "Vendors", icon: Store },
       { to: "guides", label: "Tour Guides", icon: Users },
       { to: "transport", label: "Transport Providers", icon: Globe },
 

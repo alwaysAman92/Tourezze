@@ -72,9 +72,7 @@ Frontend/
 │   │   ├── Guide/           # Guide portal
 │   │   ├── Hotel/           # Hotel owner portal
 │   │   └── Admin/           # Government/Admin portal
-│   └── componenets/         # Global components
-│       ├── ChatbotButton.jsx
-│       └── EmergencyWidget.jsx
+│   └── components/          # Global components
 ├── tailwind.config.js       # Tailwind configuration
 ├── vite.config.js          # Vite configuration
 └── eslint.config.js        # ESLint configuration
@@ -87,7 +85,6 @@ Frontend/
 - Culture showcase section
 - Explore destinations preview
 - Events section
-- Marketplace/product showcase
 - Role selector for different user types
 - Why choose us section
 - Footer with links
@@ -96,8 +93,8 @@ Frontend/
 - **Explore**: Browse popular destinations
 - **AI Itinerary**: Generate personalized travel plans
 - **Events**: Discover and register for tourism events
-- **Shop**: Browse and purchase from local vendors
-- **Hotels**: Search and book accommodations
+- **Packages**: Browse and book curated tour packages
+- **Hotels**: Search and book accommodations with real-time data from database
 - Modal-based authentication (login/signup)
 
 ### Vendor Portal
@@ -193,14 +190,6 @@ The frontend communicates with the backend API using Axios:
 - JWT tokens stored in localStorage
 - Automatic token injection in request headers
 - Error handling for API responses
-
-## 🧩 Global Components
-
-### ChatbotButton
-Floating chatbot button accessible throughout the application for tourist assistance.
-
-### EmergencyWidget
-Emergency support widget providing quick access to help and emergency services.
 
 ## 📱 Responsive Design
 

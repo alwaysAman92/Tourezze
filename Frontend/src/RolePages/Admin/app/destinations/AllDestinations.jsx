@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../config/api';
 
 import React, { useState, useEffect } from "react";
 import SearchFilterBar from "./Allcomponents/SearchFilterBar";
@@ -19,7 +20,7 @@ export default function AllDestinations() {
   // FETCH ALL DESTINATIONS
   const fetchDestinations = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/destinations");
+      const res = await fetch(`${API_BASE}/api/admin/destinations`);
       const data = await res.json();
 
       if (data.success) setDestinations(data.data);
@@ -36,7 +37,7 @@ export default function AllDestinations() {
   const updateDestination = async (form) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/admin/destinations/${editingData._id}`,
+        `${API_BASE}/api/admin/destinations/${editingData._id}`,
         {
           method: "PUT",
           headers: {
@@ -68,7 +69,7 @@ export default function AllDestinations() {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/admin/destinations/${id}`,
+        `${API_BASE}/api/admin/destinations/${id}`,
         { method: "DELETE" }
       );
 

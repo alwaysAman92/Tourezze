@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../config/api';
 import React, { useEffect, useState } from "react";
 import EventCard from "./Eventss/EventCard";
 import ARVRModal from "./Eventss/ARVRModal";
@@ -13,7 +14,7 @@ export default function TouristEvents() {
   const [isDetailsOpen, setDetailsOpen] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/admin/events")
+    fetch(`${API_BASE}/api/admin/events`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success) setEvents(data.data);

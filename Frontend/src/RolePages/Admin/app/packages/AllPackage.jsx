@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../config/api';
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -6,7 +7,7 @@ export default function AllPackage() {
 
   const fetchPackages = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/tour-packages/");
+      const res = await axios.get(`${API_BASE}/api/admin/tour-packages/`);
       setPackages(res.data.data);
     } catch (err) {
       console.error(err);
@@ -17,7 +18,7 @@ export default function AllPackage() {
     if (!confirm("Are you sure you want to delete this package?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/admin/tour-packages/${id}`);
+      await axios.delete(`${API_BASE}/api/admin/tour-packages/${id}`);
       alert("Package deleted!");
       fetchPackages();
     } catch (err) {

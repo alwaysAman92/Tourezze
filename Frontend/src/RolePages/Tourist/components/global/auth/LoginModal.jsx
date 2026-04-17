@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../config/api';
 import { useState } from "react";
 import axios from "axios";
 import { X } from "lucide-react";
@@ -18,7 +19,7 @@ export default function LoginModal({ close }) {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/api/tourist/login",
+        `${API_BASE}/api/tourist/login`,
         form
       );
 

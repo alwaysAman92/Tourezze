@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../config/api';
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -23,7 +24,7 @@ export default function PaymentPage() {
   const handleStripePayment = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/payments/create-checkout-session",
+        `${API_BASE}/api/payments/create-checkout-session`,
         {
           packageId: selectedPackage._id,
           name: selectedPackage.packageName,

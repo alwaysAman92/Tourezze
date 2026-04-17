@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../config/api';
 import { useState } from "react";
 import axios from "axios";
 
@@ -44,7 +45,7 @@ export default function CreatePackage() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/admin/tour-packages/create",
+        `${API_BASE}/api/admin/tour-packages/create`,
         body
       );
       alert("Package Created Successfully!");

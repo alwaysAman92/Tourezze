@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../config/api';
 import React, { useState } from "react";
 import { Upload, Eye } from "lucide-react";
 
@@ -24,7 +25,7 @@ export default function AddHotelForm() {
     coverPhoto: "",
   });
 
-  const API_URL = "http://localhost:5000/api/hotel/add";
+  const API_URL = `${API_BASE}/api/hotel/add`;
 
   // HANDLE TEXT CHANGE
   const handleChange = (e) => {

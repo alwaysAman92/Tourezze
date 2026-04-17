@@ -76,3 +76,13 @@ export const getMyHotel = async (req, res) => {
     res.status(500).json({ success: false, message: err.message });
   }
 };
+
+//⭐ GET ALL HOTELS API (For Tourists)
+export const getAllHotels = async (req, res) => {
+  try {
+    const hotels = await Hotel.find({}).populate('ownerId', 'name email');
+    res.json({ success: true, hotels });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};

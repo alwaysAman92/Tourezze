@@ -43,8 +43,8 @@ export default function Vendors() {
       {/* Page Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className="text-3xl font-bold">Vendors & Marketplace</h1>
-          <p className="text-gray-600">Manage marketplace vendors across Jharkhand</p>
+          <h1 className="text-3xl font-bold">Vendors</h1>
+          <p className="text-gray-600">Manage vendors across Jharkhand</p>
         </div>
 
         <button className="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-md">

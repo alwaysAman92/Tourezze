@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../../config/api';
 import {
   CalendarDays,
   MapPin,
@@ -15,7 +16,7 @@ export default function EventCard({ event, onARVR, onDetails }) {
   if (!event) return null;
 
   const img = event.bannerImage
-    ? `http://localhost:5000/image-proxy?url=${encodeURIComponent(event.bannerImage)}`
+    ? `${API_BASE}/image-proxy?url=${encodeURIComponent(event.bannerImage)}`
     : "https://placehold.co/600x400";
 
   return (

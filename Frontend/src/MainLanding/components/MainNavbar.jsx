@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Bell, Globe, User, Store, Navigation, Building, Shield } from "lucide-react";
 
-export default function MainNavbar({ exploreRef, eventsRef, marketplaceRef }) {
+export default function MainNavbar({ exploreRef, eventsRef }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showAlerts, setShowAlerts] = useState(false);
 
@@ -43,84 +43,72 @@ export default function MainNavbar({ exploreRef, eventsRef, marketplaceRef }) {
     English: {
       explore: "Tourist Places",
       events: "Events",
-      marketplace: "Marketplace",
       role: "Select Your Role",
       alerts: "Travel Alerts",
     },
     Hindi: {
       explore: "पर्यटक स्थल",
       events: "कार्यक्रम",
-      marketplace: "बाज़ार",
       role: "अपनी भूमिका चुनें",
       alerts: "यात्रा अलर्ट",
     },
     Santhali: {
       explore: "ᱛᱚᱨᱤᱥᱛ ᱯᱞᱮᱥ",
       events: "ᱪᱟᱹᱱᱤᱭᱟᱜ",
-      marketplace: "ᱢᱤᱫᱟᱜ",
       role: "ᱨᱚᱞ",
       alerts: "ᱟᱞᱮᱨᱴ",
     },
     Nagpuri: {
       explore: "गुमने के जगह",
       events: "समारोह",
-      marketplace: "बाजार",
       role: "भूमिका चुनें",
       alerts: "अलर्ट",
     },
     Khortha: {
       explore: "परयटक जगह",
       events: "मेला",
-      marketplace: "बाजार",
       role: "भूमिका चुनऽ",
       alerts: "अलारट",
     },
     Ho: {
       explore: "𑣘𑣋𑣼𑣜 𑣙𑣂𑣼𑣉",
       events: "𑣙𑣁𑣕𑣂𑣼𑣉",
-      marketplace: "𑣛𑣃𑣜𑣂𑣼𑣉",
       role: "𑣌𑣁𑣜𑣄",
       alerts: "𑣌𑣋𑣜𑣁𑣙𑣂",
     },
     Bengali: {
       explore: "পর্যটন স্থান",
       events: "ইভেন্ট",
-      marketplace: "বাজার",
       role: "আপনার ভূমিকা নির্বাচন করুন",
       alerts: "ভ্রমণ সতর্কতা",
     },
     Telugu: {
       explore: "పర్యాటక ప్రదేశాలు",
       events: "ఈవెంట్లు",
-      marketplace: "మార్కెట్",
       role: "మీ పాత్రను ఎంచుకోండి",
       alerts: "ప్రయాణ హెచ్చరికలు",
     },
     Marathi: {
       explore: "पर्यटन स्थळे",
       events: "कार्यक्रम",
-      marketplace: "बाजार",
       role: "भूमिका निवडा",
       alerts: "प्रवास सूचना",
     },
     Tamil: {
       explore: "சுற்றுலா இடங்கள்",
       events: "நிகழ்வுகள்",
-      marketplace: "சந்தை",
       role: "உங்கள் பாத்திரத்தை தேர்ந்தெடுக்கவும்",
       alerts: "பயண எச்சரிக்கை",
     },
     Gujarati: {
       explore: "પર્યટન સ્થળો",
       events: "ઇવેન્ટ્સ",
-      marketplace: "બજાર",
       role: "તમારી ભૂમિકા પસંદ કરો",
       alerts: "પ્રવાસ ચેતવણી",
     },
     Kannada: {
       explore: "ಪರ್ಯಟನಾ ಸ್ಥಳಗಳು",
       events: "ಕಾರ್ಯಕ್ರಮಗಳು",
-      marketplace: "ಮಾರುಕಟ್ಟೆ",
       role: "ನಿಮ್ಮ ಪಾತ್ರವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
       alerts: "ಪ್ರಯಾಣ ಎಚ್ಚರಿಕೆ",
     },
@@ -173,9 +161,6 @@ export default function MainNavbar({ exploreRef, eventsRef, marketplaceRef }) {
           </p>
           <p className="hover:text-green-300 cursor-pointer" onClick={() => scrollToSection(eventsRef)}>
             {translations[language].events}
-          </p>
-          <p className="hover:text-green-300 cursor-pointer" onClick={() => scrollToSection(marketplaceRef)}>
-            {translations[language].marketplace}
           </p>
 
           <Link to="/ar-vr" className="hover:text-green-300 transition">Packages</Link>

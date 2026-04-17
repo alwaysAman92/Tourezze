@@ -21,7 +21,7 @@ RUN addgroup -g 1001 -S nodejs && \
 USER nodejs
 
 # Expose port
-EXPOSE 5001
+EXPOSE 5000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \

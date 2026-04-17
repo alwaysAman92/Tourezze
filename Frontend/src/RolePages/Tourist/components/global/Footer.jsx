@@ -25,7 +25,6 @@ export default function Footer() {
               <li><Link to="/role/tourist/ai-itinerary" className="hover:text-green-300">Plan Trip</Link></li>
               <li><Link to="/role/tourist/hotels" className="hover:text-green-300">Hotels</Link></li>
               <li><Link to="/role/tourist/events" className="hover:text-green-300">Events</Link></li>
-              <li><Link to="/role/tourist/shop" className="hover:text-green-300">Marketplace</Link></li>
             </ul>
           </div>
 

@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../config/api';
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -32,7 +33,7 @@ export default function HotelAuth() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/hotel/auth/login", {
+      const res = await fetch(`${API_BASE}/api/hotel/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginForm),
@@ -63,7 +64,7 @@ export default function HotelAuth() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/hotel/auth/register", {
+      const res = await fetch(`${API_BASE}/api/hotel/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(signupForm),

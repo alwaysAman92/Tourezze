@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../config/api';
 import React, { useState } from "react";
 import {
   Loader2,
@@ -7,7 +8,7 @@ import PlannerHeader from "./PlannerHeader";
 import PlannerLeftPanel from "./PlannerLeftPanel";
 import PlannerRightPanel from "./PlannerRightPanel";
 
-const API_BASE = "http://localhost:5000";
+
 
 export default function AiItineraryPro() {
   // BASIC TRIP INFO (shared states)

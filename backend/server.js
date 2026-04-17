@@ -15,8 +15,7 @@ connectDB();
 // 📌 IMPORT ROUTES (All Modules)
 // -----------------------------------------
 
-// Chatbot + Tourist
-import chatRoutes from "./src/Chatbot/routes/chat.routes.js";
+// Tourist
 import touristRoutes from "./src/Tourist/routes/tourist.routes.js";
 import itineraryRoutes from "./src/Tourist/routes/itinerary.routes.js";
 
@@ -102,8 +101,7 @@ app.get("/", (req, res) => {
 // ⭐ ATTACH ALL ROUTES ✅
 // -----------------------------------------
 
-// Chatbot + Tourist
-app.use("/api", chatRoutes);
+// Tourist
 app.use("/api/tourist", touristRoutes);
 app.use("/api/ai", itineraryRoutes);
 

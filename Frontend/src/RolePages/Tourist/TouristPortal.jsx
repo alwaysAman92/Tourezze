@@ -9,7 +9,6 @@ import Footer from "../Tourist/components/global/Footer.jsx";
 import ExplorePage from "./components/Explore/pages/ExplorePage.jsx";
 import Plan from "./components/Plan/Plan.jsx";
 import EventsPage from "./components/events/pages/EventsPage.jsx";
-import MarketplacePage from "./components/Shop/pages/MarketplacePage.jsx";
 import HotelsPage from "./components/Hotels/pages/HotelsPage.jsx";
 
 // ⭐ Packages List
@@ -37,7 +36,6 @@ export default function Tourist() {
           <Route path="explore" element={<ExplorePage />} />
           <Route path="ai-itinerary" element={<Plan />} />
           <Route path="events" element={<EventsPage />} />
-          <Route path="shop" element={<MarketplacePage />} />
           <Route path="hotels" element={<HotelsPage />} />
 
           {/* ⭐ All Packages Page */}

@@ -2,8 +2,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Chatbot from "./components/chatbot/Chatbot";
-import EmergencyWidget from "./components/EmergencyWidget";
 import MainLanding from "./MainLanding/MainLanding";
 
 // Role Pages
@@ -49,9 +47,6 @@ function NotFound() {
 export default function App() {
   return (
     <>
-      <Chatbot />
-      <EmergencyWidget />
-
       <Routes>
         <Route path="/" element={<MainLanding />} />
 

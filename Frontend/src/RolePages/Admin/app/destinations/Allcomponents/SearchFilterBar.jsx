@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Search, Plus } from "lucide-react";
 
 export default function SearchFilterBar({ search, setSearch, filter, setFilter }) {
@@ -36,12 +37,12 @@ export default function SearchFilterBar({ search, setSearch, filter, setFilter }
       </div>
 
       {/* ⭐ Add Destination Button */}
-      <a
-        href="http://localhost:5173/role/government/add-destination"
+      <Link
+        to="/role/government/add-destination"
         className="flex items-center gap-2 bg-green-700 text-white px-4 py-2 rounded-xl shadow-sm hover:bg-green-800 transition"
       >
         <Plus size={18} /> Add Destination
-      </a>
+      </Link>
     </div>
   );
 }

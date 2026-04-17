@@ -4,7 +4,7 @@ export default function CategoryTabs({ active, setActive, search, setSearch }) {
   const categories = ["All", "Nature", "Temple", "Adventure", "Heritage"];
 
   return (
-    <div className="px-6 mt-6 space-y-4">
+    <div id="explore-section" className="px-6 mt-6 space-y-4">
       <input
         type="text"
         placeholder="Search destinations..."

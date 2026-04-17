@@ -31,6 +31,12 @@ const HotelSchema = new mongoose.Schema(
 
     imageLinks: [{ type: String }],
     coverPhoto: { type: String },
+
+    // Additional fields for frontend filtering
+    pricePerNight: { type: Number, default: 2000 },
+    rating: { type: Number, default: 4.5 },
+    propertyType: { type: String, default: "Hotel" },
+    amenities: [{ type: String }],
   },
   { timestamps: true }
 );

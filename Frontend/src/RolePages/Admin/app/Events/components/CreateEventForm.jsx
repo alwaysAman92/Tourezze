@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../config/api';
 import React, { useState } from "react";
 import {
   Calendar,
@@ -41,7 +42,7 @@ export default function CreateEventForm() {
             : [],
       };
 
-      const res = await fetch("http://localhost:5000/api/admin/events", {
+      const res = await fetch(`${API_BASE}/api/admin/events`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

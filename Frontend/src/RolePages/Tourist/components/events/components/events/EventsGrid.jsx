@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../../config/api';
 import EventCard from "./EventCard";
 
 export default function EventsGrid({ events }) {
@@ -9,7 +10,7 @@ export default function EventsGrid({ events }) {
       event={{
         name: ev.eventName,
         image: ev.bannerImage
-          ? `http://localhost:5000/image-proxy?url=${encodeURIComponent(ev.bannerImage)}`
+          ? `${API_BASE}/image-proxy?url=${encodeURIComponent(ev.bannerImage)}`
           : "https://via.placeholder.com/400",
         dates: ev.eventDate,
         district: ev.location,

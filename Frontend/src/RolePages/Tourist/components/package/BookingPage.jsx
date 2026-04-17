@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../config/api';
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -10,7 +11,7 @@ export default function BookingPage() {
   const fetchPackage = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/admin/tour-packages/${id}`
+        `${API_BASE}/api/admin/tour-packages/${id}`
       );
       setPkg(res.data.data);
     } catch (err) {

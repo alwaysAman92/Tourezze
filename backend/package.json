@@ -1,5 +1,5 @@
 {
-  "name": "chatbot2",
+  "name": "tour-ezze-backend",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
@@ -18,8 +18,10 @@
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "joi": "^18.0.2",
-    "moongose": "^1.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.4.1",
     "multer": "^2.0.2",
+    "node-fetch": "^3.3.2",
     "stripe": "^20.0.0"
   },
   "devDependencies": {

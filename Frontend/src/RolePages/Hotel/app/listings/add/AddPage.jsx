@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../config/api';
 import React, { useState } from "react";
 import { Upload, Eye } from "lucide-react";
 
@@ -15,7 +16,7 @@ export default function AddRoomForm() {
     coverPhoto: "",
   });
 
-  const API_URL = "http://localhost:5000/api/hotel/room/add";
+  const API_URL = `${API_BASE}/api/hotel/room/add`;
 
   // HANDLE INPUT CHANGE
   const handleChange = (e) => {

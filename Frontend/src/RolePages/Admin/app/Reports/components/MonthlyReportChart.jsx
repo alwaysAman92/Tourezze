@@ -1,10 +1,10 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const data = [
-  { month: "Jan", hotels: 450000, transport: 280000, marketplace: 190000 },
-  { month: "Feb", hotels: 480000, transport: 310000, marketplace: 210000 },
-  { month: "Mar", hotels: 520000, transport: 330000, marketplace: 230000 },
-  { month: "Apr", hotels: 550000, transport: 350000, marketplace: 250000 },
+  { month: "Jan", hotels: 450000, transport: 280000 },
+  { month: "Feb", hotels: 480000, transport: 310000 },
+  { month: "Mar", hotels: 520000, transport: 330000 },
+  { month: "Apr", hotels: 550000, transport: 350000 },
 ];
 
 export default function MonthlyReportChart() {
@@ -21,7 +21,6 @@ export default function MonthlyReportChart() {
 
           <Bar dataKey="hotels" stackId="a" fill="#16a34a" />
           <Bar dataKey="transport" stackId="a" fill="#facc15" />
-          <Bar dataKey="marketplace" stackId="a" fill="#fb923c" />
 
         </BarChart>
       </ResponsiveContainer>

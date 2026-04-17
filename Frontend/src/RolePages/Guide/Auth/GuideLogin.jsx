@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../config/api';
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -32,7 +33,7 @@ export default function GuideAuth() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/guide/auth/login", {
+      const res = await fetch(`${API_BASE}/api/guide/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginForm),
@@ -67,7 +68,7 @@ export default function GuideAuth() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/guide/auth/signup", {
+      const res = await fetch(`${API_BASE}/api/guide/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(signupForm),

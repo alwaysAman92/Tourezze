@@ -1,4 +1,6 @@
+import { API_BASE } from '../../../../config/api';
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   MapPin,
   Mountain,
@@ -33,7 +35,7 @@ export default function AddDestination() {
   // Submit Handler
   const handleSubmit = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/destinations", {
+      const res = await fetch(`${API_BASE}/api/admin/destinations`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -238,12 +240,12 @@ export default function AddDestination() {
         <div className="flex justify-end">
 
            {/* ⭐ All Destinations Button */}
-          <a
-            href="http://localhost:5173/role/government/destinations"
+          <Link
+            to="/role/government/destinations"
             className="px-6 py-3 rounded-lg border border-green-700 text-green-700 font-medium hover:bg-green-50 transition"
           >
             ← All Destinations
-          </a>
+          </Link>
 
           <button
             className="bg-green-700 text-white px-6 py-3 rounded-lg text-lg flex items-center gap-1"

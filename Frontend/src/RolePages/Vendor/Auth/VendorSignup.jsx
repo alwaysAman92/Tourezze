@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../config/api';
 
 
 import React, { useState } from "react";
@@ -138,7 +139,7 @@ export default function VendorSignup() {
       }
 
       // Send JSON to backend (route: POST /api/vendor/signup)
-      const res = await fetch("http://localhost:5000/api/vendor/signup", {
+      const res = await fetch(`${API_BASE}/api/vendor/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

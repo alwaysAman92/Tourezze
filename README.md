@@ -7,10 +7,8 @@ TourEzze is a full-stack tourism management platform that connects tourists, ven
 ### Core Features
 - **AI-Powered Itinerary Generation**: Generate personalized travel plans using Google Gemini AI based on budget, duration, interests, and preferences
 - **Multi-Role Authentication**: Separate portals for Tourists, Vendors, Guides, Hotel Owners, and Government Administrators
-- **Real-time Chat & Emergency Support**: Built-in chatbot and emergency widget for tourist assistance
 - **Comprehensive Analytics**: Dashboard with charts, reports, and insights for all stakeholders
 - **Event Management**: Discover and manage tourism events
-- **Marketplace**: Vendors can list and sell products to tourists
 - **Booking System**: Hotels and guides can manage bookings, availability, and earnings
 
 ### Role-Specific Features
@@ -116,7 +114,7 @@ vivek/
     │   │   ├── Guide/              # Guide portal
     │   │   ├── Hotel/              # Hotel owner portal
     │   │   └── Admin/              # Government/Admin portal
-    │   └── componenets/            # Global components (chatbot, emergency)
+    │   └── components/             # Global components
     ├── public/                     # Static assets
     └── package.json
 ```
@@ -259,7 +257,6 @@ npm run dev
 - `/role/tourist/` or `/role/tourist/explore` - Explore destinations
 - `/role/tourist/ai-itinerary` - AI itinerary generator
 - `/role/tourist/events` - Browse events
-- `/role/tourist/shop` - Marketplace
 - `/role/tourist/hotels` - Browse and book hotels
 
 ## 🔐 Authentication
@@ -297,10 +294,6 @@ The AI generates a detailed itinerary with day-by-day plans, activities, and rec
 - duration, budget, travellerType, startLocation, interests, preferences, aiPlan, isSaved, timestamps
 
 ## 🎯 Key Features Implementation
-
-### Real-time Components
-- **Chatbot**: Global chatbot button for tourist assistance
-- **Emergency Widget**: Emergency support widget accessible throughout the app
 
 ### Analytics & Reporting
 - Revenue charts

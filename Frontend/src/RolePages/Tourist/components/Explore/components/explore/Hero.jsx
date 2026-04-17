@@ -25,11 +25,21 @@ export default function Hero() {
         </p>
 
         <div className="flex gap-6 justify-center flex-wrap animate-fadeInUp delay-300">
-          <button className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 hover:scale-105">
+          <button
+            onClick={() =>
+              document.getElementById("explore-section")?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 hover:scale-105"
+          >
             Start Exploring
           </button>
 
-          <button className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/30 backdrop-blur-md transition-all duration-300 hover:scale-105">
+          <button
+            onClick={() =>
+              document.getElementById("explore-section")?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/30 backdrop-blur-md transition-all duration-300 hover:scale-105"
+          >
             Learn More
           </button>
         </div>

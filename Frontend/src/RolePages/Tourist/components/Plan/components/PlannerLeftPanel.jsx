@@ -58,30 +58,46 @@ export default function PlannerLeftPanel({
       <p className="text-xs text-gray-500">Fill details to generate a personalized AI itinerary.</p>
 
       {/* DESTINATION + START */}
-      <div className="grid grid-cols-2 gap-4">
-        
+      <div className="space-y-3">
+
         {/* Destination */}
         <div>
-          <label className="text-[11px] font-semibold text-gray-600 tracking-wide uppercase">Destination</label>
+          <label className="text-[11px] font-semibold text-gray-600 tracking-wide uppercase">Destination in Jharkhand</label>
           <div className={inputBox}>
             <MapPin size={16} className="text-emerald-600" />
             <input
               className="flex-1 bg-transparent text-sm outline-none"
-              placeholder="Jharkhand / Goa / Himachal"
+              placeholder="e.g. Ranchi, Netarhat, Deoghar, Betla..."
               value={destination}
               onChange={(e) => setDestination(e.target.value)}
             />
+          </div>
+          {/* Quick Pick Buttons */}
+          <div className="flex gap-2 flex-wrap mt-2">
+            {["Ranchi", "Netarhat", "Deoghar", "Betla NP", "Jamshedpur", "Hazaribagh", "Giridih", "Rajrappa"].map((place) => (
+              <button
+                key={place}
+                onClick={() => setDestination(place)}
+                className={`text-[10px] px-2.5 py-1 rounded-full border transition-all ${
+                  destination === place
+                    ? "bg-emerald-600 text-white border-emerald-600"
+                    : "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100"
+                }`}
+              >
+                {place}
+              </button>
+            ))}
           </div>
         </div>
 
         {/* Start Location */}
         <div>
-          <label className="text-[11px] font-semibold text-gray-600 tracking-wide uppercase">Start Location</label>
+          <label className="text-[11px] font-semibold text-gray-600 tracking-wide uppercase">Starting From</label>
           <div className={inputBox}>
             <MapPin size={16} className="text-emerald-600" />
             <input
               className="flex-1 bg-transparent text-sm outline-none"
-              placeholder="Ranchi / Patna / Delhi"
+              placeholder="Ranchi / Jamshedpur / Dhanbad..."
               value={startLocation}
               onChange={(e) => setStartLocation(e.target.value)}
             />

@@ -1,9 +1,10 @@
+import { API_BASE } from '../../../../../../config/api';
 import React from "react";
 import { Calendar, Edit, Trash2, MapPin, PlayCircle } from "lucide-react";
 
 export default function EventCard({ data, onEdit, onDelete, onARVR }) {
   const image = data.bannerImage
-    ? `http://localhost:5000/image-proxy?url=${encodeURIComponent(
+    ? `${API_BASE}/image-proxy?url=${encodeURIComponent(
         data.bannerImage
       )}`
     : "https://via.placeholder.com/400";

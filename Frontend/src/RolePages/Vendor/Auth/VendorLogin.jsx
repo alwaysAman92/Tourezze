@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../config/api';
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -16,7 +17,7 @@ export default function VendorLogin() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/vendor/login", {
+      const res = await fetch(`${API_BASE}/api/vendor/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

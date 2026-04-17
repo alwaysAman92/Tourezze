@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../config/api';
 import React, { useEffect, useState } from "react";
 import EventCard from "./AllEvent/EventCard";
 import EditEventModal from "./AllEvent/EditEventModal";
@@ -14,7 +15,7 @@ export default function AllEvents() {
 
   // FETCH ALL EVENTS
   const fetchEvents = async () => {
-    const res = await fetch("http://localhost:5000/api/admin/events");
+    const res = await fetch(`${API_BASE}/api/admin/events`);
     const data = await res.json();
     if (data.success) setEvents(data.data);
   };
@@ -27,7 +28,7 @@ export default function AllEvents() {
   const deleteEvent = async (id) => {
     if (!confirm("Delete this event?")) return;
 
-    const res = await fetch(`http://localhost:5000/api/admin/events/${id}`, {
+    const res = await fetch(`${API_BASE}/api/admin/events/${id}`, {
       method: "DELETE",
     });
 
@@ -42,7 +43,7 @@ export default function AllEvents() {
   const updateEvent = async (updated) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/admin/events/${editingData._id}`,
+        `${API_BASE}/api/admin/events/${editingData._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

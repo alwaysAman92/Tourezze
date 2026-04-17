@@ -1,3 +1,4 @@
+import { API_BASE } from '../../../../../config/api';
 import React from "react";
 import { MapPin, Edit, Trash2, Video, PlayCircle } from "lucide-react";
 
@@ -15,7 +16,7 @@ export default function DestinationCard({ data, onEdit, onDelete, onARVR }) {
     rawImage && rawImage.trim() !== ""
       ? rawImage.startsWith("http")
         ? rawImage
-        : `http://localhost:5000/${rawImage}`
+        : `${API_BASE}/${rawImage}`
       : "https://placehold.co/600x400?text=No+Image+Found";
 
   return (
