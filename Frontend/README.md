@@ -4,25 +4,6 @@ React-based frontend application for the TourEzze tourism management platform, b
 
 ## 🚀 Quick Start
 
-### Option 1: Docker (Recommended)
-
-The frontend is dockerized and can be run with Docker Compose from the root directory:
-
-```bash
-# From the root directory (vivek/)
-docker compose up -d --build frontend
-
-# View logs
-docker compose logs -f frontend
-
-# Stop
-docker compose down frontend
-```
-
-The frontend will be available at http://localhost:3000
-
-### Option 2: Local Development
-
 ```bash
 # Install dependencies
 npm install

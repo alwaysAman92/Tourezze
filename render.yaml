@@ -1,13 +1,10 @@
 services:
-  # MongoDB Database (Managed by Render)
-  # Create this separately as a Render Database
-
   # Backend API Service
   - type: web
     name: tourezze-backend
-    runtime: docker
-    buildCommand: docker build -t backend ./backend
-    dockerfilePath: ./backend/Dockerfile
+    runtime: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
         value: production
@@ -22,12 +19,12 @@ services:
       - key: GEMINI_API_KEY
         sync: false # Set this manually in Render dashboard
 
-  # Frontend Service
+  # Frontend Service (Static Site)
   - type: web
     name: tourezze-frontend
-    runtime: docker
-    buildCommand: docker build -t frontend ./Frontend
-    dockerfilePath: ./Frontend/Dockerfile
+    runtime: static
+    buildCommand: cd Frontend && npm install && npm run build
+    staticPublishPath: Frontend/dist
     envVars:
       - key: VITE_API_URL
         fromService:

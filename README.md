@@ -123,58 +123,10 @@ vivek/
 
 ### Prerequisites
 - Node.js (v18 or higher)
-- MongoDB (local or cloud instance)
+- MongoDB (local or cloud instance, e.g. MongoDB Atlas)
 - npm or pnpm
-- **OR** Docker Desktop (for Docker setup)
 
 ### Installation
-
-#### Option 1: Docker Setup (Recommended)
-
-1. **Clone the repository**
-```bash
-git clone <repository-url>
-cd vivek
-```
-
-2. **Environment Variables**
-
-Ensure you have a `.env` file in the `backend` directory:
-```env
-PORT=5001
-MONGO_URI=mongodb://localhost:27017/tour-ezze  # Will be overridden in Docker
-GEMINI_API_KEY=your_google_gemini_api_key
-JWT_SECRET=your_jwt_secret_key
-```
-
-3. **Start all services with Docker Compose**
-```bash
-docker compose up -d --build
-```
-
-This will start:
-- **MongoDB** on port `27017`
-- **Backend API** on port `5001`
-- **Frontend** on port `3000`
-
-4. **View logs**
-```bash
-docker compose logs -f
-```
-
-5. **Stop services**
-```bash
-docker compose down
-```
-
-6. **Stop and remove volumes (clean slate)**
-```bash
-docker compose down -v
-```
-
-**Note**: The `docker-compose.yml` automatically reads environment variables from `backend/.env`. The `MONGO_URI` will be automatically set to use the Docker MongoDB service (`mongodb://mongodb:27017/tour-ezze`) for container-to-container communication.
-
-#### Option 2: Local Development Setup
 
 1. **Clone the repository**
 ```bash
@@ -326,43 +278,26 @@ npm run preview # Preview production build
 
 ## 🚀 Deployment
 
-### Docker Deployment
+### Backend Deployment (Render)
+1. Connect your GitHub repository to [Render](https://render.com)
+2. Create a new **Web Service** pointing to the `backend` directory
+3. Set the build command: `npm install`
+4. Set the start command: `npm start`
+5. Add environment variables (`MONGO_URI`, `GEMINI_API_KEY`, `JWT_SECRET`, etc.) in the Render dashboard
+6. Render will auto-deploy on every push to your main branch
 
-The project is fully dockerized and ready for containerized deployment:
+### Frontend Deployment (Vercel)
+1. Connect your GitHub repository to [Vercel](https://vercel.com)
+2. Set the **Root Directory** to `Frontend`
+3. Vercel auto-detects Vite and runs `npm run build`
+4. Add the `VITE_API_URL` environment variable pointing to your Render backend URL
+5. Vercel will auto-deploy on every push to your main branch
 
-1. **Build and push Docker images** (if using a registry):
-```bash
-docker compose build
-docker tag vivek-backend:latest your-registry/backend:latest
-docker tag vivek-frontend:latest your-registry/frontend:latest
-docker push your-registry/backend:latest
-docker push your-registry/frontend:latest
-```
-
-2. **Deploy with Docker Compose**:
-   - Ensure `backend/.env` is properly configured
-   - Run `docker compose up -d` on your server
-   - Services will automatically restart on failure
-
-3. **Production considerations**:
-   - Use environment-specific `.env` files
-   - Configure proper CORS settings for production domain
-   - Set up SSL/TLS with a reverse proxy (nginx/traefik)
-   - Use Docker secrets for sensitive data in production
-   - Configure MongoDB authentication and backups
-
-### Traditional Deployment
-
-#### Backend Deployment
-1. Set environment variables in your hosting platform
-2. Ensure MongoDB connection is accessible
-3. Deploy to platforms like Heroku, Railway, or AWS
-
-#### Frontend Deployment
-1. Build the project: `npm run build`
-2. Deploy the `dist` folder to Vercel, Netlify, or any static hosting service
-3. Configure environment variables if needed
-4. Update API base URL to point to your backend deployment
+### Production Considerations
+- Use MongoDB Atlas for a managed cloud database
+- Configure CORS on the backend to allow only your Vercel frontend domain
+- Keep API keys and secrets in each platform's environment variable settings
+- Enable auto-deploy for continuous delivery
 
 ## 📝 Code Style
 
